@@ -7,17 +7,14 @@
         <h1 class="page-title">Leave Requests</h1>
     </div>
 
-    <!-- Loading -->
     <div class="loading-text" *ngIf="loading">
         Loading leave requests...
     </div>
 
-    <!-- Error -->
     <div class="error-text" *ngIf="errorMessage">
         {{ errorMessage }}
     </div>
 
-    <!-- Leave Request Table -->
     <div class="table-container" *ngIf="!loading && !errorMessage">
         <table class="data-table">
             <thead>

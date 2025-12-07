@@ -1,10 +1,11 @@
 <div class="layout-container">
+
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="logo-text">Kaar Tech</div>
       <div class="logo-subtext">In Pursuit of Excellence</div>
     </div>
-    
+
     <div class="sidebar-title">Employee Portal</div>
     
     <nav class="nav-menu">
@@ -12,13 +13,13 @@
         <span class="nav-icon">👤</span>
         Profile
       </a>
+
       <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
         <span class="nav-icon">📊</span>
         Dashboard
       </a>
-     
     </nav>
-    
+
     <div class="logout-section">
       <button class="logout-btn" (click)="logout()">
         <span class="nav-icon">🚪</span>
@@ -26,8 +27,9 @@
       </button>
     </div>
   </aside>
-  
+
   <main class="main-content">
     <router-outlet></router-outlet>
   </main>
+
 </div>

@@ -16,56 +16,33 @@
         <div class="login-card">
             <div class="login-header">
                 <h2>Welcome Back</h2>
-                <p>Please sign in to your employee account</p>
+                <p>Sign in to continue</p>
             </div>
 
             <form (ngSubmit)="onSubmit()">
-                
-                <!-- Employee ID Field -->
+
                 <div class="form-group">
                     <label class="form-label">Employee ID</label>
-                    <input type="text"
-                           class="form-input"
-                           placeholder="Enter your Employee ID"
-                           [(ngModel)]="employeeId"
-                           name="employeeId"
-                           required />
+                    <input type="text" class="form-input" placeholder="Enter your Employee ID"
+                         [(ngModel)]="employeeId" name="employeeId" required />
                 </div>
 
-                <!-- Password Field -->
                 <div class="form-group">
                     <label class="form-label">Password</label>
                     <div class="password-group">
-                        <input
-                            [type]="showPassword ? 'text' : 'password'"
-                            class="form-input"
-                            placeholder="Enter your password"
-                            [(ngModel)]="password"
-                            name="password"
-                            required />
+                        <input [type]="showPassword ? 'text' : 'password'" class="form-input"
+                               placeholder="Enter your password"
+                               [(ngModel)]="password" name="password" required />
 
-                        <button type="button"
-                                class="toggle-password"
-                                (click)="togglePassword()">
+                        <button type="button" class="toggle-password" (click)="togglePassword()">
                             {{ showPassword ? '👁️' : '👁️‍🗨️' }}
                         </button>
                     </div>
                 </div>
 
-                <!-- Error Message -->
-                <div class="error-message" *ngIf="errorMessage">
-                    {{ errorMessage }}
-                </div>
+                <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
 
-                <!-- Loading -->
-                <div class="loading-text" *ngIf="loading">
-                    Authenticating...
-                </div>
-
-                <!-- Login Button -->
-                <button type="submit"
-                        class="btn-login"
-                        [disabled]="loading">
+                <button type="submit" class="btn-login" [disabled]="loading">
                     {{ loading ? 'Logging in...' : 'Login' }}
                 </button>
             </form>

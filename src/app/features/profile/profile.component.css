@@ -1,69 +1,124 @@
+/* ------------------------------
+   PROFILE PAGE WRAPPER
+--------------------------------*/
 .profile-container {
-    padding: 20px;
+    padding: 25px;
+    font-family: "Poppins", sans-serif;
+    color: #1e1e3f; /* Base dark text */
 }
 
+/* ------------------------------
+   HEADER CARD (Glass + Neon Glow)
+--------------------------------*/
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
-    background-color: var(--color-card-bg-yellow);
-    padding: 30px;
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-soft);
+
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+
+    padding: 35px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 22px rgba(106, 0, 255, 0.25);
+
+    margin-bottom: 35px;
 }
 
+/* ------------------------------
+   AVATAR CIRCLE
+--------------------------------*/
 .avatar-section {
-    margin-right: 30px;
+    margin-right: 25px;
 }
 
 .avatar-circle {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
+
+    background: linear-gradient(145deg, #6a00ff, #00b3ff);
     border-radius: 50%;
-    background-color: var(--color-background);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 3rem;
-    color: var(--color-primary);
-    border: 4px solid white;
-    box-shadow: var(--shadow-soft);
+    color: white;
+
+    box-shadow:
+        0 0 20px rgba(106, 0, 255, 0.5),
+        0 0 25px rgba(0, 179, 255, 0.4);
 }
 
-.vendor-info-header h2 {
-    margin-bottom: 5px;
-    color: #0056b3;
-    /* Blue as per requirements */
+/* ------------------------------
+   HEADER TEXT (DARK & READABLE)
+--------------------------------*/
+.employee-info-header h2 {
+    margin-bottom: 6px;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #1a1a2e; /* Dark heading */
 }
 
-.vendor-id {
-    font-weight: bold;
-    color: black;
+.employee-id {
+    font-size: 1rem;
+    color: #3b3f5c; /* Muted readable secondary text */
+    font-weight: 600;
 }
 
+/* ------------------------------
+   INFO GRID CARD (Glass Box)
+--------------------------------*/
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    background-color: var(--color-card-bg);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+
     padding: 30px;
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-soft);
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 25px rgba(106, 0, 255, 0.15);
 }
 
+/* ------------------------------
+   INFO ITEMS
+--------------------------------*/
 .info-item {
-    margin-bottom: 15px;
+    padding: 10px 5px;
 }
 
+/* LABELS */
 .info-label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    color: #4a4a6a; /* Darker labels */
     margin-bottom: 4px;
+    display: block;
 }
 
+/* VALUES */
 .info-value {
-    font-weight: bold;
-    color: var(--color-text-main);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d0f24; /* Dark text — clearly visible */
+}
+
+/* ------------------------------
+   LOADING & ERROR TEXT
+--------------------------------*/
+.loading-text {
     font-size: 1rem;
+    color: #6a00ff;
+    font-weight: 600;
+}
+
+.error-text {
+    font-size: 1rem;
+    color: #ff3b3b;
+    font-weight: 600;
 }

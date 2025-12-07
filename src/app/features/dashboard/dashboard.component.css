@@ -1,51 +1,89 @@
+/* -----------------------------------
+   DASHBOARD PAGE WRAPPER
+----------------------------------- */
 .dashboard-container {
-    padding: 20px;
+    padding: 25px;
+    font-family: "Poppins", sans-serif;
 }
 
+/* TITLE */
 .dashboard-title {
     margin-bottom: 30px;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a2e; /* Dark readable heading */
+    text-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
 
+/* GRID */
 .tiles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
+/* -----------------------------------
+   TILE (Glass + Neon Border + Glow)
+----------------------------------- */
 .dashboard-tile {
-    background-color: var(--color-card-bg-yellow);
-    padding: 30px;
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-soft);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 35px;
+    border-radius: 20px;
+
     text-decoration: none;
+    text-align: center;
+
+    color: #1a1a2e;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 
+        0 0 18px rgba(106, 0, 255, 0.15),
+        0 0 25px rgba(0, 179, 255, 0.1);
+
+    transition: 0.35s ease;
+    cursor: pointer;
 }
 
+/* HOVER – Neon Glow + Lift */
 .dashboard-tile:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+        0 0 25px rgba(106, 0, 255, 0.4),
+        0 0 35px rgba(0, 179, 255, 0.35);
+    border-color: rgba(106, 0, 255, 0.5);
 }
 
+/* ICON */
 .tile-icon {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 20px;
-    color: var(--color-primary);
+
+    background: linear-gradient(145deg, #6a00ff, #00b3ff);
+    
+    /* Add BOTH lines ↓↓ */
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 18px rgba(106, 0, 255, 0.3);
 }
 
+
+/* TILE TITLE */
 .tile-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--color-primary);
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0d0f24; /* Dark clean readable text */
 }
 
+/* SUBTITLE (If needed) */
 .tile-subtitle {
     font-size: 0.9rem;
-    color: var(--color-text-secondary);
+    color: #4a4a6a;
+    margin-top: 8px;
 }
