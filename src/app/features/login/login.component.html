@@ -1,0 +1,74 @@
+<div class="login-container">
+
+    <!-- Left Side -->
+    <div class="left-side">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+
+        <div class="brand-content">
+            <h1 class="brand-title">Employee Portal</h1>
+        </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="right-side">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Please sign in to your employee account</p>
+            </div>
+
+            <form (ngSubmit)="onSubmit()">
+                
+                <!-- Employee ID Field -->
+                <div class="form-group">
+                    <label class="form-label">Employee ID</label>
+                    <input type="text"
+                           class="form-input"
+                           placeholder="Enter your Employee ID"
+                           [(ngModel)]="employeeId"
+                           name="employeeId"
+                           required />
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-group">
+                        <input
+                            [type]="showPassword ? 'text' : 'password'"
+                            class="form-input"
+                            placeholder="Enter your password"
+                            [(ngModel)]="password"
+                            name="password"
+                            required />
+
+                        <button type="button"
+                                class="toggle-password"
+                                (click)="togglePassword()">
+                            {{ showPassword ? '👁️' : '👁️‍🗨️' }}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div class="error-message" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                </div>
+
+                <!-- Loading -->
+                <div class="loading-text" *ngIf="loading">
+                    Authenticating...
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit"
+                        class="btn-login"
+                        [disabled]="loading">
+                    {{ loading ? 'Logging in...' : 'Login' }}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

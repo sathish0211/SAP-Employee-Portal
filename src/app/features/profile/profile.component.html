@@ -1,0 +1,96 @@
+<div class="profile-container">
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="loading-text">
+        Loading profile...
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="errorMessage" class="error-text">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Profile Content -->
+    <div *ngIf="employeeData" class="profile-content">
+
+        <!-- Header Section -->
+        <div class="profile-header">
+            <div class="avatar-section">
+                <div class="avatar-circle">
+                    <span>👤</span>
+                </div>
+            </div>
+
+            <div class="employee-info-header">
+                <h2>{{ employeeData.fullName }}</h2>
+                <div class="employee-id">Employee ID: {{ employeeData.Pernr }}</div>
+            </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+
+            <div class="info-item">
+                <span class="info-label">First Name</span>
+                <div class="info-value">{{ employeeData.Fname }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Last Name</span>
+                <div class="info-value">{{ employeeData.Lname }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Gender</span>
+                <div class="info-value">{{ employeeData.Gender }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Address</span>
+                <div class="info-value">{{ employeeData.Address }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">City</span>
+                <div class="info-value">{{ employeeData.City }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">State</span>
+                <div class="info-value">{{ employeeData.State }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Country</span>
+                <div class="info-value">{{ employeeData.Country }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Nationality</span>
+                <div class="info-value">{{ employeeData.Nationality }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Company Code</span>
+                <div class="info-value">{{ employeeData.CompanyCode }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Cost Center</span>
+                <div class="info-value">{{ employeeData.CostCenter }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Job Position</span>
+                <div class="info-value">{{ employeeData.JobPosition }}</div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Job</span>
+                <div class="info-value">{{ employeeData.Job }}</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

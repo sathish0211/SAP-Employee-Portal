@@ -1,0 +1,52 @@
+<div class="leave-container">
+
+    <div class="page-header">
+        <a routerLink="/dashboard" class="back-btn">
+            <span class="back-icon">←</span> Back
+        </a>
+        <h1 class="page-title">Leave Requests</h1>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-text" *ngIf="loading">
+        Loading leave requests...
+    </div>
+
+    <!-- Error -->
+    <div class="error-text" *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Leave Request Table -->
+    <div class="table-container" *ngIf="!loading && !errorMessage">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Quota Type</th>
+                    <th>Quota Time</th>
+                    <th>Quota Start</th>
+                    <th>Quota End</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let leave of leaveRequests">
+                    <td>{{ leave.Sdate }}</td>
+                    <td>{{ leave.Edate }}</td>
+                    <td>{{ leave.Category }}</td>
+                    <td>{{ leave.Descrip }}</td>
+                    <td>{{ leave.Qtype }}</td>
+                    <td>{{ leave.Qtime }}</td>
+                    <td>{{ leave.Qstart }}</td>
+                    <td>{{ leave.Qend }}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>

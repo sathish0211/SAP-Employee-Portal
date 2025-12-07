@@ -1,0 +1,84 @@
+<div class="ps-container">
+
+    <div class="page-header">
+        <a routerLink="/dashboard" class="back-btn">
+            <span class="back-icon">←</span>
+        </a>
+
+        <h1 class="page-title">Pay Slip</h1>
+
+        <!-- Preview + Download Buttons -->
+        <div class="button-group">
+            <button class="preview-btn" (click)="previewPDF()">👁️ View Pay Slip</button>
+            <button class="download-btn" (click)="downloadPDF()">⬇️ Download PDF</button>
+        </div>
+    </div>
+
+    <!-- Email Section -->
+    <div class="email-section">
+        <input
+            type="email"
+            [(ngModel)]="emailToSend"
+            placeholder="Enter email to send..."
+            class="email-input"
+        />
+
+        <button class="email-btn" (click)="sendEmail()">📧 Send Email</button>
+    </div>
+
+    <div class="email-message" *ngIf="emailMessage">
+        {{ emailMessage }}
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="loading-text">
+        Loading Pay Slip...
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="errorMessage" class="error-text">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Table -->
+    <div class="table-container" *ngIf="!loading && !errorMessage">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Company Code</th>
+                    <th>Cost Center</th>
+                    <th>Position</th>
+                    <th>Gender</th>
+                    <th>Nationality</th>
+                    <th>Pay Scale Group</th>
+                    <th>Pay Level</th>
+                    <th>Amount</th>
+                    <th>Wage Type</th>
+                    <th>Currency</th>
+                    <th>Working Hours</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let ps of paySlips">
+                    <td>{{ ps.EmpId }}</td>
+                    <td>{{ ps.Name }}</td>
+                    <td>{{ ps.CompanyCode }}</td>
+                    <td>{{ ps.CostCenter }}</td>
+                    <td>{{ ps.Stell }}</td>
+                    <td>{{ ps.Gender }}</td>
+                    <td>{{ ps.Nationality }}</td>
+                    <td>{{ ps.PscaleGroup }}</td>
+                    <td>{{ ps.PsLevel }}</td>
+                    <td>{{ ps.Amount }}</td>
+                    <td>{{ ps.WageType }}</td>
+                    <td>{{ ps.CurrencyKey }}</td>
+                    <td>{{ ps.WorkingHours }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
